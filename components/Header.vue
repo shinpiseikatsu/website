@@ -59,6 +59,7 @@ nav
   background white
   padding-top 3rem
   transition .2s
+  z-index 100
   li
     list-style none
     font-size 2.5rem
@@ -81,4 +82,5 @@ nav
   bottom 0
   width 100%
   background rgba(255,255,255,.8)
+  z-index 50
 </style>

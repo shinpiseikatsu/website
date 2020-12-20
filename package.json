@@ -1,5 +1,5 @@
 {
-  "name": "artist",
+  "name": "Shinpiseikatsu",
   "version": "1.0.0",
   "description": "My sublime Nuxt.js project",
   "author": "si-zerodarkthirty",
@@ -16,7 +16,9 @@
     "contentful": "^7.14.3",
     "nuxt": "^2.0.0",
     "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "swiper": "^6.4.5",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",
