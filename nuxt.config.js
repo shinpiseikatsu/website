@@ -75,12 +75,10 @@ export default {
       return Promise.all([
         client.getEntries({
           'content_type': 'work',
-          'content_type': 'product'
         })
-      ]).then(([works,products]) => {
+      ]).then(([works]) => {
         return [
-          ...works.items.map(work => `work/${work.fields.slug}`),
-          ...products.items.map(product => `work/${product.fields.slug}`)
+          ...works.items.map(work => `work/${work.fields.slug}`)
         ]
       })
     }
