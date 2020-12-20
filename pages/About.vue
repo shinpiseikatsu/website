@@ -10,13 +10,6 @@
       v-html="$md.render(about.fields.messageEn)"
       class="about leading-loose"
     ></div>
-    <!-- <div class="flex flex-wrap justify-between mt-6">
-      <Member 
-        v-for="member in members"
-        :key="member.sys.id"
-        :member="member"
-      />
-    </div> -->
   </div>
 </template>
 

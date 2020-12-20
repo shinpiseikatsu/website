@@ -1,23 +1,24 @@
 <template>
   <header>
-    <div class="menu_btn cursor-pointer" @click="nav = true">
-      <img src="../assets/img/icon_2.jpg" alt="">
-    </div>
-    <div v-if="nav == true" class="bg" @click="nav = false"></div>
-    <nav :class="{'nav_on': nav == true}">
-      <nuxt-link to="/">
-        <li :class="{'active': $route.path == '/'}" @click="nav = false">works</li>
-      </nuxt-link>
-      <nuxt-link to="/products">
-        <li :class="{'active': $route.path == '/products'}" @click="nav = false">products</li>
-      </nuxt-link>
-      <nuxt-link to="/about">
-        <li :class="{'active': $route.path == '/about'}" @click="nav = false">about us</li>
-      </nuxt-link>
-      <nuxt-link to="/contact">
-        <li :class="{'active': $route.path == '/contact'}" @click="nav = false">contact</li>
-      </nuxt-link>
-    </nav>
+    <nuxt-link to="/special">
+      <div class="logo">
+        <img src="../assets/img/icon_1.jpg" alt="">
+      </div>
+      <nav class="mt-5">
+        <li>
+          <nuxt-link to="/">products</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/works">works</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/about">about</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact">contact</nuxt-link>
+        </li>
+      </nav>
+    </nuxt-link>
   </header>
 </template>
 
@@ -48,22 +49,10 @@ export default {
 header
   padding 2rem 0
 nav
-  max-width 80%
-  width 400px
-  margin-right -400px
-  position fixed
-  top 0
-  bottom 0
-  right 0
-  box-shadow 0 0 5px rgba(0,0,0,.1) 
-  background white
-  padding-top 3rem
-  transition .2s
-  z-index 100
   li
     list-style none
-    font-size 2.5rem
-    padding 1.5rem 2rem
+    font-size 1rem
+    padding .5rem 0
   .active
     font-weight bold
 

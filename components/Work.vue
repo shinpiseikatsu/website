@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="item overflow-hidden m-5 cursor-pointer"
+    class="item overflow-hidden m-1 cursor-pointer"
     @click="$router.push('/work/' + work.fields.slug)"
   >
       <div 
@@ -8,9 +8,6 @@
         :alt="work.fields.title"
         class="w-full bg-cover bg-center bg-no-repeat"
       ></div>
-      <h2 class="mt-2 font-bold">{{ work.fields.title }}</h2>
-      <h2 class="mb-2 font-bold">{{ work.fields.titleEn }}</h2>
-      <p class="font-bold">{{ work.fields.date.substr(0,10) }}</p>
     </div>
 </template>
 

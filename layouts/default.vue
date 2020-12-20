@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-wrap justify-around">
     <Header />
     <main>
       <nuxt />
@@ -31,10 +31,4 @@ main
   width 100%
   max-width 600px
   margin 0 auto
-
-.logo
-  width 13rem
-  margin 0 auto
-  img 
-    width 100%
 </style>
