@@ -1,9 +1,10 @@
 <template>
-  <div class="narrow">
+  <div>
     <img 
       :src="special.fields.media.fields.file.url" 
       class="w-full display-block mx-auto"
     >
+    <p class="mt-12">{{ special.fields.text }}</p>
   </div>
 </template>
 
