@@ -53,6 +53,8 @@ header
   position fixed
   top 3rem
   left 3rem
+.logo
+  width 10rem
 nav
   li
     list-style none

@@ -84,10 +84,10 @@ export default {
     }
   },
   mounted() {
-   window.addEventListener('resize', this.calculateWindowWidth);
+    window.addEventListener('resize', this.calculateWindowWidth);
   },
   beforeDestroy() {
-   window.removeEventListener('resize', this.calculateWindowWidth);
+    window.removeEventListener('resize', this.calculateWindowWidth);
   },
   methods: {
     calculateWindowWidth() {
