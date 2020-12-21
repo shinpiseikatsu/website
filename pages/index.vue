@@ -1,71 +1,79 @@
 <template>
-  <div v-if="windowWidth > 1200" class="flex flex-wrap flex-start">
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(0, Math.floor(works.length/4))" 
-        :key="work.sys.id"
-        :work="work"
-      />
+  <div>
+    <div class="four_rows">
+      <div class="rows">
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(0, Math.floor(works.length/4))" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/4), Math.floor(works.length/4)*2+Math.max(0,works.length%4-2))" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/4)*2+Math.max(0,works.length%4-2), Math.floor(works.length/4)*3+works.length%4+Math.max(0,works.length%4-2))" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/4)*3+works.length%4)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/4), Math.floor(works.length/4)*2+Math.max(0,works.length%4-2))" 
-        :key="work.sys.id"
-        :work="work"
-      />
+    <div class="three_rows">
+      <div class="rows">
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(0, Math.floor(works.length/3)+works.length%3)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/3)+works.length%3, Math.floor(works.length/3)*2+works.length%3)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/3)*2+works.length%3)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/4)*2+Math.max(0,works.length%4-2), Math.floor(works.length/4)*3+works.length%4+Math.max(0,works.length%4-2))" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/4)*3+works.length%4)" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-  </div>
-  <div v-else-if="windowWidth < 1200 && windowWidth > 1100" class="flex flex-wrap flex-start">
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(0, Math.floor(works.length/3)+works.length%3)" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/3)+works.length%3, Math.floor(works.length/3)*2+works.length%3)" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/3)*2+works.length%3)" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-  </div>
-  <div v-else-if="windowWidth < 1100 && windowWidth > 500" class="flex flex-wrap flex-start">
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(0, Math.floor(works.length/2)+works.length%2)" 
-        :key="work.sys.id"
-        :work="work"
-      />
-    </div>
-    <div class="row">
-      <Work 
-        v-for="work in works.slice(Math.floor(works.length/2)+works.length%2)" 
-        :key="work.sys.id"
-        :work="work"
-      />
+    <div class="two_rows">
+      <div class="rows">
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(0, Math.floor(works.length/2)+works.length%2)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+        <div class="row">
+          <Work 
+            v-for="work in works.slice(Math.floor(works.length/2)+works.length%2)" 
+            :key="work.sys.id"
+            :work="work"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -77,22 +85,6 @@ const client = createClient()
 export default { 
   components: {
     Work
-  },
-  data() {
-    return {
-      windowWidth: 0
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', this.calculateWindowWidth);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.calculateWindowWidth);
-  },
-  methods: {
-    calculateWindowWidth() {
-      this.windowWidth = window.innerWidth;
-    }
   },
   asyncData() {
     return Promise.all([
@@ -110,6 +102,25 @@ export default {
 </script>
 
 <style lang="stylus"> 
+
+.rows
+  display flex
+  flex-wrap wrap
+  justify-content flex-start
+
+.three_rows, .two_rows
+  display none 
+@media(max-width 1200px)
+  .four_rows
+    display none
+  .three_rows
+    display block
+@media(max-width 1100px)
+  .two_rows
+    display block
+  .three_rows
+    display none
+
 
 .row
   width calc(15%+80px)
