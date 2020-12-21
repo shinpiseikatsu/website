@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-wrap justify-around">
-    <Header />
+    <aside>
+      <Header />
+    </aside>
     <main>
       <nuxt />
     </main>
@@ -23,12 +25,14 @@ html
   font-family 'Quicksand', 'Yu Gothic', 'YuGothic', sans-serif
   font-size 14px
   word-spacing 1px
+  padding 3rem
+
+aside
+  width 150px
+  padding 2rem 0
 
 main
-  padding 1rem 2% 8rem
-
-.narrow
-  width 100%
-  max-width 600px
+  width 80%
+  padding 1rem 0
   margin 0 auto
 </style>

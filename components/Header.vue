@@ -4,21 +4,24 @@
       <div class="logo">
         <img src="../assets/img/icon_1.jpg" alt="">
       </div>
-      <nav class="mt-5">
-        <li>
-          <nuxt-link to="/">products</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/works">works</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/about">about</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contact">contact</nuxt-link>
-        </li>
-      </nav>
     </nuxt-link>
+    <nav class="mt-5">
+      <li>
+        <nuxt-link to="/">PRODUCTS</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/works">WORKS</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/about">ABOUT</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/contact">CONTACT</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/contact">INSTAGRAM</nuxt-link>
+      </li>
+    </nav>
   </header>
 </template>
 
@@ -46,8 +49,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-header
-  padding 2rem 0
+header 
+  position fixed
+  top 3rem
+  left 3rem
 nav
   li
     list-style none

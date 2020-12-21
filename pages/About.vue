@@ -1,14 +1,14 @@
 <template>
-  <div class="narrow">
-    <h2 class="text-5xl my-2">新皮生活</h2>
+  <div>
+    <h2 class="text-3xl my-2">新皮生活</h2>
     <div 
       v-html="$md.render(about.fields.messageJp)"
-      class="about leading-loose"
+      class="about mb-16"
     ></div>
-    <h2 class="text-5xl my-2">Shinpiseikatsu</h2>
+    <h2 class="text-3xl my-2">Shinpiseikatsu</h2>
     <div 
       v-html="$md.render(about.fields.messageEn)"
-      class="about leading-loose"
+      class="about"
     ></div>
   </div>
 </template>
@@ -41,6 +41,7 @@ export default {
 
 <style lang="stylus">
 .about
+  line-height 1rem
   p
     margin 1.5rem 0
 </style>
