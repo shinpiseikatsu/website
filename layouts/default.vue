@@ -32,7 +32,7 @@ aside
   padding 2rem 0
 
 main
-  width 80%
+  width 75%
   padding 1rem 0
   margin 0 auto
 </style>

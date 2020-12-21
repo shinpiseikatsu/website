@@ -115,7 +115,7 @@ export default {
     display none
   .three_rows
     display block
-@media(max-width 1100px)
+@media(max-width 1000px)
   .two_rows
     display block
   .three_rows
@@ -128,7 +128,7 @@ export default {
   transition .2s
   @media(max-width 1200px)
     width calc(20%+100px)
-  @media(max-width 1100px)
+  @media(max-width 1000px)
     width 48%
 
 </style>

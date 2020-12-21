@@ -54,11 +54,11 @@ header
   top 3rem
   left 3rem
 .logo
-  width 10rem
+  width 6rem
 nav
   li
     list-style none
-    font-size 1rem
+    font-size .8rem
     padding .5rem 0
   .active
     font-weight bold
