@@ -1,9 +1,11 @@
 <template>
-  <img 
-    :src="work.fields.images[0].fields.file.url" 
-    :alt="work.fields.title"
-    class="item m-1"
-  />
+  <nuxt-link :to=" '/work/' + work.fields.slug ">
+    <img 
+      :src="work.fields.images[0].fields.file.url" 
+      :alt="work.fields.title"
+      class="item m-1"
+    />
+  </nuxt-link>
 </template>
 
 <script>
