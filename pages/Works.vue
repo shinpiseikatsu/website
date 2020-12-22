@@ -127,7 +127,7 @@ export default {
   margin 0 0.2rem
   transition .2s
   @media(max-width 1200px)
-    width calc(20%+100px)
+    width calc(20%+80px)
   @media(max-width 1000px)
     width 48%
 

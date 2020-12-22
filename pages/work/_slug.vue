@@ -3,8 +3,8 @@
     <h1 class="text-2xl mt-8">{{ work.fields.title }}</h1>
     <h1 class="text-2xl mb-4">{{ work.fields.titleEn }}</h1>
     <p class="mb-4">{{ work.fields.date.substr(0,10) }}</p>
-    <swiper :options="swiperOption">
-      <swiper-slide 
+    <swiper ref="mySwiper" :options="swiperOptions">
+      <swiper-slide
         v-for="(img,index) in work.fields.images" 
         :key="index"
       >
@@ -14,39 +14,22 @@
           class="w-full display-block mx-auto"
         >
       </swiper-slide>
-      <div
-        slot="pagination"
-        class="swiper-pagination"
-      />
-      <div
-        slot="button-prev"
-        class="swiper-button-prev"
-      />
-      <div
-        slot="button-next"
-        class="swiper-button-next"
-      />
+      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
     </swiper>
     <div class="content" v-html="$md.render(work.fields.content)"></div>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 export default { 
   data() {
     return {
-      swiperOption: {
-        speed: 1000, //スライドの切り替わりスピード
-        spaceBetween: 30, //各スライドの余白
-        centeredSlides: true, //スライダーを真ん中に
-        loop: true, //無限ループ
-        autoplay: { //スライドの自動切り替え
-          delay: 5000, //スライドの自動切り替えの秒数
-          disableOnInteraction: false //何らかのアクション後の自動切り替えを再開
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination'
         },
         navigation: {
           nextEl: '.swiper-button-next',
@@ -54,10 +37,6 @@ export default {
         }
       }
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide
   },
   asyncData({params}) {
     return Promise.all([
@@ -75,10 +54,13 @@ export default {
 </script>
 
 <style lang="stylus">
-  .content
-    p
-      margin 1.5rem 0
-      line-height 2rem
-    li
-      list-style unset
+.content
+  p
+    margin 1.5rem 0
+    line-height 2rem
+  li
+    list-style unset
+
+.swiper-button-prev, .swiper-button-next
+  color white
 </style>
