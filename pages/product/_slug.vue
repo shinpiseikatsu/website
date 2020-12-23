@@ -1,5 +1,5 @@
 <template>
-  <div class="narrow">
+  <div>
     <h1 class="text-2xl mt-8">{{ product.fields.title }}</h1>
     <h1 class="text-2xl mb-4" v-if="product.fields.titleEn">{{ product.fields.titleEn }}</h1>
     <p class="mb-4" v-if="product.fields.date">{{ product.fields.date.substr(0,10) }}</p>
@@ -52,15 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-.content
-  p
-    margin 1.5rem 0
-    line-height 2rem
-  li
-    list-style unset
-
-.swiper-button-prev, .swiper-button-next
-  color white
-</style>
