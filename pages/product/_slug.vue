@@ -1,11 +1,11 @@
 <template>
   <div class="narrow">
-    <h1 class="text-2xl mt-8">{{ work.fields.title }}</h1>
-    <h1 class="text-2xl mb-4" v-if="work.fields.titleEn">{{ work.fields.titleEn }}</h1>
-    <p class="mb-4" v-if="work.fields.date">{{ work.fields.date.substr(0,10) }}</p>
-    <swiper ref="mySwiper" :options="swiperOptions" v-if="work.fields.images.length > 0">
+    <h1 class="text-2xl mt-8">{{ product.fields.title }}</h1>
+    <h1 class="text-2xl mb-4" v-if="product.fields.titleEn">{{ product.fields.titleEn }}</h1>
+    <p class="mb-4" v-if="product.fields.date">{{ product.fields.date.substr(0,10) }}</p>
+    <swiper ref="mySwiper" :options="swiperOptions" v-if="product.fields.images.length > 0">
       <swiper-slide
-        v-for="(img,index) in work.fields.images" 
+        v-for="(img,index) in product.fields.images" 
         :key="index"
       >
         <img 
@@ -17,7 +17,7 @@
       <div class="swiper-button-next" slot="button-next"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
     </swiper>
-    <div v-if="work.fields.content" class="content" v-html="$md.render(work.fields.content)"></div>
+    <div v-if="product.fields.content" class="content" v-html="$md.render(product.fields.content)"></div>
   </div>
 </template>
 
@@ -41,12 +41,12 @@ export default {
   asyncData({params}) {
     return Promise.all([
       client.getEntries({
-        'content_type': 'work',
+        'content_type': 'product',
         'fields.slug': params.slug
       })
-    ]).then(([works]) => {
+    ]).then(([products]) => {
       return {
-        work: works.items[0]
+        product: products.items[0]
       }
     }).catch(console.error)
   }

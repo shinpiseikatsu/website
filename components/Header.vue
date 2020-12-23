@@ -99,6 +99,8 @@ header
   right 1rem
   width 3rem
   z-index 100
+  @media(min-width 670px) 
+    display none
 .nav_sm
   position fixed
   top 0

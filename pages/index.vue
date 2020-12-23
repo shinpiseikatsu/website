@@ -3,31 +3,31 @@
     <div class="four_rows">
       <div class="rows">
         <div class="row">
-          <Work 
-            v-for="work in works.slice(0, list_four[0])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(0, list_four[0])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_four[0], list_four[0]+list_four[1])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_four[0], list_four[0]+list_four[1])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_four[0]+list_four[1], list_four[0]+list_four[1]+list_four[2])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_four[0]+list_four[1], list_four[0]+list_four[1]+list_four[2])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_four[0]+list_four[1]+list_four[2])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_four[0]+list_four[1]+list_four[2])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
       </div>
@@ -35,24 +35,24 @@
     <div class="three_rows">
       <div class="rows">
         <div class="row">
-          <Work 
-            v-for="work in works.slice(0, list_three[0])"
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(0, list_three[0])"
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_three[0], list_three[0]+list_three[1])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_three[0], list_three[0]+list_three[1])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_three[0]+list_three[1])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_three[0]+list_three[1])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
       </div>
@@ -60,17 +60,17 @@
     <div class="two_rows">
       <div class="rows">
         <div class="row">
-          <Work 
-            v-for="work in works.slice(0, list_two[0])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(0, list_two[0])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
         <div class="row">
-          <Work 
-            v-for="work in works.slice(list_two[0])" 
-            :key="work.sys.id"
-            :work="work"
+          <Product 
+            v-for="product in products.slice(list_two[0])" 
+            :key="product.sys.id"
+            :product="product"
           />
         </div>
       </div>
@@ -79,12 +79,12 @@
 </template>
 
 <script>
-import Work from '@/components/Work'
+import Product from '@/components/Product'
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 export default { 
   components: {
-    Work
+    Product
   },
   asyncData() {
     function partition(dividend, n) {
@@ -98,15 +98,15 @@ export default {
     }
     return Promise.all([
       client.getEntries({
-        'content_type': 'work',
+        'content_type': 'product',
         order: 'fields.date'
       })
-    ]).then(([works]) => {
+    ]).then(([products]) => {
       return {
-        works: works.items,
-        list_two: partition(works.items.length,2),
-        list_three: partition(works.items.length,3),
-        list_four: partition(works.items.length,4)
+        products: products.items,
+        list_two: partition(products.items.length,2),
+        list_three: partition(products.items.length,3),
+        list_four: partition(products.items.length,4)
       }
     }).catch(console.error)
   }

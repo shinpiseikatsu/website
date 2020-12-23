@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to=" '/work/' + work.fields.slug ">
-    <img 
+    <img v-if="work.fields.images.length > 0"
       :src="work.fields.images[0].fields.file.url" 
       :alt="work.fields.title"
       class="item m-1"
