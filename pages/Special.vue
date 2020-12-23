@@ -1,10 +1,11 @@
 <template>
   <div>
+    {{randomInt}}
     <img 
-      :src="special.fields.media.fields.file.url" 
+      :src="special.fields.images[randomInt].fields.file.url" 
       class="w-full display-block mx-auto"
     >
-    <p class="mt-12">{{ special.fields.text }}</p>
+    <p class="mt-12" v-if="special.fields.text" >{{ special.fields.text }}</p>
   </div>
 </template>
 
@@ -13,13 +14,17 @@ import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 export default { 
   asyncData() {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
     return Promise.all([
       client.getEntries({
         'content_type': 'special'
       })
     ]).then(([specials]) => {
       return {
-        special: specials.items[0]
+        special: specials.items[0],
+        randomInt: getRandomInt(specials.items[0].fields.images.length)
       }
     }).catch(console.error)
   }
