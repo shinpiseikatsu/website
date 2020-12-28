@@ -3,9 +3,15 @@
     <h1 class="text-2xl mt-8">{{ work.fields.title }}</h1>
     <h1 class="text-2xl mb-4" v-if="work.fields.titleEn">{{ work.fields.titleEn }}</h1>
     <p class="mb-4" v-if="work.fields.date">{{ work.fields.date.substr(0,10) }}</p>
-    <client-only>
-      <swiper ref="mySwiper" :options="swiperOptions" v-if="work.fields.images.length > 0">
-        <swiper-slide
+      <carousel
+        :per-page="1"
+        :autoplay="true"
+        :loop="true"
+        :pagination-padding="5"
+        :autoplay-timeout="4000"
+        :navigationEnabled="true"
+      >
+        <slide
           v-for="(img,index) in work.fields.images" 
           :key="index"
         >
@@ -14,31 +20,21 @@
             :alt="img.fields.file.name"
             class="w-full display-block mx-auto"
           >
-        </swiper-slide>
-        <div class="swiper-button-next" slot="button-next"></div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-      </swiper>
-    </client-only>
+        </slide>
+      </carousel>
     <div v-if="work.fields.content" class="content" v-html="$md.render(work.fields.content)"></div>
   </div>
 </template>
 
 <script>
+import Carousel from 'vue-carousel/src/Carousel.vue'
+import Slide from 'vue-carousel/src/Slide.vue'
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 export default { 
-  data() {
-    return {
-      swiperOptions: {
-        pagination: {
-          el: '.swiper-pagination'
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      }
-    }
+  components: {
+    Carousel,
+    Slide
   },
   asyncData({params}) {
     return Promise.all([
