@@ -85,6 +85,8 @@ export default {
   padding 0
   cursor pointer
   outline none
+  @media(max-width 900px)
+    display none
 .VueCarousel-navigation-prev
   left 0
   -webkit-transform translateY(-50%) translateX(-100%)

@@ -27,6 +27,8 @@ html
   padding 3rem 0
   @media (max-width 900px)
     padding 3rem 1rem
+  @media (max-width 600px)
+    padding 3rem .25rem
 aside
   width 180px
   padding 2rem 0
