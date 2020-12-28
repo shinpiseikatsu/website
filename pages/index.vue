@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="four_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="four_cols">
+      <div class="cols">
+        <div class="col">
           <Product 
             v-for="product in products.slice(0, list_four[0])" 
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_four[0], list_four[0]+list_four[1])" 
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_four[0]+list_four[1], list_four[0]+list_four[1]+list_four[2])" 
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_four[0]+list_four[1]+list_four[2])" 
             :key="product.sys.id"
@@ -32,23 +32,23 @@
         </div>
       </div>
     </div>
-    <div class="three_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="three_cols">
+      <div class="cols">
+        <div class="col">
           <Product 
             v-for="product in products.slice(0, list_three[0])"
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_three[0], list_three[0]+list_three[1])" 
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_three[0]+list_three[1])" 
             :key="product.sys.id"
@@ -57,16 +57,16 @@
         </div>
       </div>
     </div>
-    <div class="two_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="two_cols">
+      <div class="cols">
+        <div class="col">
           <Product 
             v-for="product in products.slice(0, list_two[0])" 
             :key="product.sys.id"
             :product="product"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Product 
             v-for="product in products.slice(list_two[0])" 
             :key="product.sys.id"
@@ -115,25 +115,25 @@ export default {
 
 <style lang="stylus"> 
 
-.rows
+.cols
   display flex
   flex-wrap wrap
   justify-content flex-start
 
-.three_rows, .two_rows
+.three_cols, .two_cols
   display none 
 @media(max-width 1200px)
-  .four_rows
+  .four_cols
     display none
-  .three_rows
+  .three_cols
     display block
 @media(max-width 1000px)
-  .two_rows
+  .two_cols
     display block
-  .three_rows
+  .three_cols
     display none
 
-.row
+.col
   width calc(15%+80px)
   margin 0 0.15rem
   transition .2s
