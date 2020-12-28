@@ -6,7 +6,6 @@
     <no-ssr>
       <carousel
         :per-page="1"
-        :autoplay="true"
         :loop="true"
         :pagination-padding="5"
         :autoplay-timeout="4000"
@@ -61,4 +60,32 @@ export default {
   ol
     list-style decimal inside
     font-family monospace, 'YuGothic', 'Yu Gothic'
+.VueCarousel-navigation-button
+  position absolute
+  top 50%
+  -webkit-box-sizing border-box
+  box-sizing border-box
+  color #000
+  text-decoration none
+  -webkit-appearance none
+  -moz-appearance none
+  appearance none
+  border none
+  background-color transparent
+  padding 0
+  cursor pointer
+  outline none
+.VueCarousel-dot
+    display inline-block
+    cursor pointer
+    -webkit-appearance none
+    -moz-appearance none
+    appearance none
+    border none
+    background-clip content-box
+    -webkit-box-sizing content-box
+    box-sizing content-box
+    padding 0
+    border-radius 100%
+    outline none
 </style>
