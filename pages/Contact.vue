@@ -4,36 +4,27 @@
       name="contact" 
       method="POST" 
       netlify
-      data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" /> 
       <input 
-        class="bg-white focus:outline-none focus:border-black border-b border-gray-300 py-4 px-4 block w-full appearance-none leading-normal" 
         type="name" 
         placeholder="name"
       >
       <input 
-        class="bg-white focus:outline-none focus:border-black border-b border-gray-300 py-4 px-4 block w-full appearance-none leading-normal" 
         type="text" 
         placeholder="title"
       >
       <input 
-        class="bg-white focus:outline-none focus:border-black border-b border-gray-300 py-4 px-4 block w-full appearance-none leading-normal" 
         type="email" 
         placeholder="email"
       >
       <textarea 
-        class="bg-white focus:outline-none focus:border-black border-b border-gray-300 py-4 px-4 block w-full appearance-none leading-normal"
         name="message" 
         rows="10" 
         placeholder="message"
       ></textarea>
       <p class="my-5">{{ texts.fields.contactMessage }}</p>
-      <div class="py-2 px-4 border border-gray-400 text-gray-400 cursor-pointer my-3 mx-auto w-32 text-center">send</div>
-      <div class="p-contact__item" v-show="false">
-        <label for="message">スパムでない場合は空欄</label>
-        <input type="text" name="bot-field" v-model="botField"/>
-      </div>
+      <button type="submit">Send</button>
     </form>
   </div>
 </template>
@@ -55,3 +46,28 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scope>
+input, textarea
+  line-height 1.5
+  background white
+  border none
+  border-bottom 2px solid gray
+  padding 1rem
+  width 100%
+  transition .1s
+input:focus, textarea:focus
+  outline none
+  border-bottom 2px solid black
+  font-weight bold
+input::placeholder, textarea::placeholder
+  color black
+  opacity 1
+button 
+  display block
+  width fit-content
+  padding .5rem 3rem
+  margin 0 auto
+  border 2px solid black 
+  border-radius 2rem
+</style>
