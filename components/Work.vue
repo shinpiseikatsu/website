@@ -13,6 +13,7 @@
       @mouseover="videoController(true, work.sys.id)"
       @mouseleave="videoController(false, work.sys.id)"
       class="item my-1"
+      playsinline
     ></video>
   </nuxt-link>
 </template>

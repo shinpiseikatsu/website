@@ -28,6 +28,7 @@
             autoplay
             muted
             controls
+            playsinline
           ></video>
         </slide>
       </carousel>
