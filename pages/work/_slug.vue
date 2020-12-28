@@ -8,7 +8,6 @@
         :per-page="1"
         :loop="true"
         :pagination-padding="5"
-        :autoplay-timeout="4000"
         :navigationEnabled="true"
       >
         <slide
@@ -16,10 +15,19 @@
           :key="index"
         >
           <img 
+            v-if="img.fields.file.contentType.split('/')[0] == 'image'"
             :src="img.fields.file.url" 
             :alt="img.fields.file.name"
             class="w-full display-block mx-auto"
           >
+          <video
+            v-else
+            :src="img.fields.file.url"
+            :alt="work.fields.title"
+            class="w-full display-block mx-auto"
+            autoplay
+            muted
+          ></video>
         </slide>
       </carousel>
     </no-ssr>

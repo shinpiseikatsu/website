@@ -52,24 +52,11 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
 export default { 
   data() {
     return {
       nav: false
     }
-  },
-  asyncData() {
-    return Promise.all([
-      client.getEntries({
-        'content_type': 'siteInfo'
-      })
-    ]).then(([siteInfo]) => {
-      return {
-        siteInfo: siteInfo.items[0]
-      }
-    }).catch(console.error)
   }
 }
 </script>
