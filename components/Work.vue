@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to=" '/works/' + work.fields.slug ">
+  <nuxt-link :to=" '/work/' + work.fields.slug ">
     <img v-if="work.fields.images.length > 0"
       :src="work.fields.images[0].fields.file.url" 
       :alt="work.fields.title"
