@@ -18,9 +18,11 @@
       <li :class="{'active': $route.path == '/contact'}">
         <nuxt-link to="/contact">CONTACT</nuxt-link>
       </li>
-      <li>
-        <nuxt-link to="/contact">INSTAGRAM</nuxt-link>
-      </li>
+      <a href="https://www.instagram.com/shinpi.seikatsu/" target="_blank" rel="noopener noreferrer">
+        <li>
+          INSTAGRAM
+        </li>
+      </a>
     </nav>
     <div class="menu_btn cursor-pointer" @click="nav = !nav">
       <div>
