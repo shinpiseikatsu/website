@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="narrow">
     <h2 class="text-3xl my-2">新皮生活</h2>
     <div 
       v-html="$md.render(texts.fields.aboutJp)"

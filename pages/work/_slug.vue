@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="text-2xl mt-8">{{ work.fields.title }}</h1>
+  <div class="narrow">
+    <h1 class="text-2xl">{{ work.fields.title }}</h1>
     <h1 class="text-2xl mb-4" v-if="work.fields.titleEn">{{ work.fields.titleEn }}</h1>
     <p class="mb-4" v-if="work.fields.date">{{ work.fields.date.substr(0,10) }}</p>
     <no-ssr>

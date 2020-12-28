@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="narrow">
     <img 
       :src="special.fields.images[randomInt].fields.file.url" 
       class="w-full display-block mx-auto"

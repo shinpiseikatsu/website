@@ -27,18 +27,23 @@ html
   padding 3rem 0
   @media (max-width 900px)
     padding 3rem 1rem
-
 aside
   width 180px
   padding 2rem 0
   @media (max-width 900px)
     width 100%
     padding 0
-
 main
   width 80%
   padding 1rem 0
   margin 0 auto
   @media (max-width 900px)
     width 100%
+.narrow
+  width 700px
+  max-width 80%
+  margin 0 auto
+  @media (max-width 900px)
+    width 100%
+    max-width 100%
 </style>
