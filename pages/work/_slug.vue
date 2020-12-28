@@ -88,4 +88,7 @@ export default {
     padding 0
     border-radius 100%
     outline none
+button:focus
+    border none
+    outline none!important
 </style>
