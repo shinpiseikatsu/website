@@ -84,7 +84,7 @@ export default {
         })
       ]).then(([works,products]) => {
         return [
-          ...works.items.map(work => `work/${work.fields.slug}`),
+          ...works.items.map(work => `works/${work.fields.slug}`),
         ]
       })
     }
