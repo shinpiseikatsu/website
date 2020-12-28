@@ -10,21 +10,26 @@
         type="name" 
         name="name"
         placeholder="name"
+        required 
       >
       <input 
         type="text" 
         name="title"
         placeholder="title"
+        required 
       >
       <input 
         type="email" 
         name="email" 
         placeholder="email"
+        required 
       >
       <textarea 
         name="message" 
         rows="10" 
         placeholder="message"
+        required 
+        minlength="30"
       ></textarea>
       <p class="my-5">{{ texts.fields.contactMessage }}</p>
       <button type="submit">Send</button>
