@@ -3,7 +3,7 @@
     <h1 class="text-2xl mt-8">{{ work.fields.title }}</h1>
     <h1 class="text-2xl mb-4" v-if="work.fields.titleEn">{{ work.fields.titleEn }}</h1>
     <p class="mb-4" v-if="work.fields.date">{{ work.fields.date.substr(0,10) }}</p>
-    <client-only>
+    <no-ssr>
       <carousel
         :per-page="1"
         :autoplay="true"
@@ -23,7 +23,7 @@
           >
         </slide>
       </carousel>
-    </client-only>
+    </no-ssr>
     <div v-if="work.fields.content" class="content" v-html="$md.render(work.fields.content)"></div>
   </div>
 </template>
@@ -61,7 +61,4 @@ export default {
   ol
     list-style decimal inside
     font-family monospace, 'YuGothic', 'Yu Gothic'
-
-.swiper-button-prev, .swiper-button-next
-  color white
 </style>
