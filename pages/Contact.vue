@@ -59,6 +59,7 @@ input, textarea
   padding 1rem
   width 100%
   transition .1s
+  border-radius 0
 input:focus, textarea:focus
   outline none
   border-bottom 2px solid black
