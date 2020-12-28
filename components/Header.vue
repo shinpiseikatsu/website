@@ -23,10 +23,15 @@
       </li>
     </nav>
     <div class="menu_btn cursor-pointer" @click="nav = !nav">
-      <span v-if="!nav">menu</span>
-      <span v-else>close</span>
+      <div>
+        <div class="btn_wrapper" :class="{ 'open': nav }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
-    <nav v-if="nav == true" class="nav_sm">
+    <nav class="nav_sm" :class="{ 'open': nav }">
       <li :class="{'active': $route.path == '/'}" @click="nav = false">
         <nuxt-link to="/">PRODUCTS</nuxt-link>
       </li>
@@ -96,9 +101,61 @@ header
 .menu_btn 
   position fixed
   top 1rem
-  right 1rem
-  width 3rem
+  right 2.5rem
+  width 2.5rem
   z-index 100
+  .btn_wrapper
+    width 60px
+    height 45px
+    position relative
+    margin 0 auto
+    -webkit-transform rotate(0deg) scale(0.5,0.5)
+    -moz-transform rotate(0deg) scale(0.5,0.5)
+    -o-transform rotate(0deg) scale(0.5,0.5)
+    transform rotate(0deg) scale(0.5,0.5)
+    -webkit-transition .5s ease-in-out
+    -moz-transition .5s ease-in-out
+    -o-transition .5s ease-in-out
+    transition .5s ease-in-out
+    cursor pointer
+    span
+      display block
+      position absolute
+      height 3px
+      width 100%
+      background black
+      border-radius: 9px
+      opacity 1
+      left 0
+      -webkit-transform rotate(0deg)
+      -moz-transform rotate(0deg)
+      -o-transform rotate(0deg)
+      transform rotate(0deg)
+      -webkit-transition .25s ease-in-out
+      -moz-transition .25s ease-in-out
+      -o-transition .25s ease-in-out
+      transition .25s ease-in-out
+  .btn_wrapper span:nth-child(1)
+    top 0px
+  .btn_wrapper span:nth-child(2)
+    top 18px
+  .btn_wrapper span:nth-child(3)
+    top 36px
+  .btn_wrapper.open span:nth-child(1)
+    top 18px
+    -webkit-transform rotate(135deg)
+    -moz-transform rotate(135deg)
+    -o-transform rotate(135deg)
+    transform rotate(135deg)
+  .btn_wrapper.open span:nth-child(2)
+    opacity 0
+    left -60px
+  .btn_wrapper.open span:nth-child(3)
+    top 18px
+    -webkit-transform rotate(-135deg)
+    -moz-transform rotate(-135deg)
+    -o-transform rotate(-135deg)
+    transform rotate(-135deg)
   @media(min-width 900px) 
     display none
 .nav_sm
@@ -108,11 +165,22 @@ header
   width 100%
   background white
   padding 3rem
-  z-index 50
+  z-index -10
+  opacity 0
+  -webkit-transition .25s ease-in-out
+  -moz-transition .25s ease-in-out
+  -o-transition .25s ease-in-out
+  transition .25s ease-in-out
+  @media(min-width 900px) 
+    display none
   li
     list-style none
     font-size 2rem
     padding .5rem 0
   .active
     font-weight bold
+.nav_sm.open
+  opacity 1
+  display block
+  z-index 50
 </style>
