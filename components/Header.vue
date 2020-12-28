@@ -183,4 +183,6 @@ header
   opacity 1
   display block
   z-index 50
+  @media(min-width 900px) 
+    display none
 </style>
