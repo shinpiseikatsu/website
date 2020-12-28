@@ -80,8 +80,10 @@ export default {
       return Promise.all([
         client.getEntries({
           'content_type': 'work',
-          'content_type': 'product',
-        })
+        }),
+        client.getEntries({
+          'content_type': 'product'
+        }),
       ]).then(([works,products]) => {
         return [
           ...works.items.map(work => `works/${work.fields.slug}`),
