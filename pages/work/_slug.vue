@@ -27,6 +27,7 @@
             class="w-full display-block mx-auto"
             autoplay
             muted
+            controls
           ></video>
         </slide>
       </carousel>
