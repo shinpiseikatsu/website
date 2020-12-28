@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="four_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="four_cols">
+      <div class="cols">
+        <div class="col">
           <Work 
             v-for="work in works.slice(0, list_four[0])" 
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_four[0], list_four[0]+list_four[1])" 
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_four[0]+list_four[1], list_four[0]+list_four[1]+list_four[2])" 
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_four[0]+list_four[1]+list_four[2])" 
             :key="work.sys.id"
@@ -32,23 +32,23 @@
         </div>
       </div>
     </div>
-    <div class="three_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="three_cols">
+      <div class="cols">
+        <div class="col">
           <Work 
             v-for="work in works.slice(0, list_three[0])"
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_three[0], list_three[0]+list_three[1])" 
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_three[0]+list_three[1])" 
             :key="work.sys.id"
@@ -57,16 +57,16 @@
         </div>
       </div>
     </div>
-    <div class="two_rows">
-      <div class="rows">
-        <div class="row">
+    <div class="two_cols">
+      <div class="cols">
+        <div class="col">
           <Work 
             v-for="work in works.slice(0, list_two[0])" 
             :key="work.sys.id"
             :work="work"
           />
         </div>
-        <div class="row">
+        <div class="col">
           <Work 
             v-for="work in works.slice(list_two[0])" 
             :key="work.sys.id"
@@ -112,37 +112,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus"> 
-
-.rows
-  display flex
-  flex-wrap wrap
-  justify-content flex-start
-
-.three_rows, .two_rows
-  display none 
-@media(max-width 1200px)
-  .four_rows
-    display none
-  .three_rows
-    display block
-@media(max-width 1000px)
-  .two_rows
-    display block
-  .three_rows
-    display none
-
-.row
-  width calc(15%+80px)
-  margin 0 0.15rem
-  transition .2s
-  @media(max-width 1200px)
-    width calc(20%+80px)
-  @media(max-width 1000px)
-    width 48%
-  @media(max-width 670px)
-    width 100%
-
-
-</style>

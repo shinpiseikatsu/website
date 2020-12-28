@@ -74,14 +74,14 @@ header
   position fixed
   top 3rem
   left 3rem
-  @media(max-width 670px) 
+  @media(max-width 900px) 
     position relative
     top 0
     left 0
     margin-bottom 2rem
 .logo
   width 6rem
-  @media(max-width 670px) 
+  @media(max-width 900px) 
     margin 0 auto
 .nav_lg
   margin-top 1.25rem
@@ -91,7 +91,7 @@ header
     padding .5rem 0
   .active
     font-weight bold
-  @media(max-width 670px) 
+  @media(max-width 900px) 
     display none
 .menu_btn 
   position fixed
@@ -99,7 +99,7 @@ header
   right 1rem
   width 3rem
   z-index 100
-  @media(min-width 670px) 
+  @media(min-width 900px) 
     display none
 .nav_sm
   position fixed

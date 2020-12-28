@@ -3,7 +3,7 @@
     <img v-if="product.fields.images.length > 0"
       :src="product.fields.images[0].fields.file.url" 
       :alt="product.fields.title"
-      class="item m-1"
+      class="item my-1"
     />
   </nuxt-link>
 </template>

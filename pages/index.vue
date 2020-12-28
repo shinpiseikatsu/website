@@ -119,6 +119,8 @@ export default {
   display flex
   flex-wrap wrap
   justify-content flex-start
+  @media(max-width 900px)
+    justify-content center
 
 .three_cols, .two_cols
   display none 
@@ -134,15 +136,14 @@ export default {
     display none
 
 .col
-  width calc(15%+80px)
+  width calc(20%+40px)
   margin 0 0.15rem
   transition .2s
   @media(max-width 1200px)
-    width calc(20%+80px)
+    width calc(30%+20px)
   @media(max-width 1000px)
     width 48%
-  @media(max-width 670px)
+  @media(max-width 700px)
     width 100%
-
 
 </style>
