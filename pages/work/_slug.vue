@@ -75,19 +75,32 @@ export default {
   padding 0
   cursor pointer
   outline none
+.VueCarousel-navigation-prev
+  left 0
+  -webkit-transform translateY(-50%) translateX(-100%)
+  transform translateY(-50%) translateX(-100%)
+  font-family "system"
+.VueCarousel-navigation-next
+  right 0
+  -webkit-transform translateY(-50%) translateX(100%)
+  transform translateY(-50%) translateX(100%)
+  font-family "system"
+.VueCarousel-pagination
+  width 100%
+  text-align center
 .VueCarousel-dot
-    display inline-block
-    cursor pointer
-    -webkit-appearance none
-    -moz-appearance none
-    appearance none
-    border none
-    background-clip content-box
-    -webkit-box-sizing content-box
-    box-sizing content-box
-    padding 0
-    border-radius 100%
-    outline none
+  display inline-block
+  cursor pointer
+  -webkit-appearance none
+  -moz-appearance none
+  appearance none
+  border none
+  background-clip content-box
+  -webkit-box-sizing content-box
+  box-sizing content-box
+  padding 0
+  border-radius 100%
+  outline none
 button:focus
     border none
     outline none!important
