@@ -46,4 +46,7 @@ main
   @media (max-width 900px)
     width 100%
     max-width 100%
+button:focus
+  border none!important
+  outline none!important
 </style>

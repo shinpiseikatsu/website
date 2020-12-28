@@ -111,6 +111,6 @@ export default {
   border-radius 100%
   outline none
 button:focus
-    border none
+    border none!important
     outline none!important
 </style>
