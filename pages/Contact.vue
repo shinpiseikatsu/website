@@ -8,14 +8,17 @@
       <input type="hidden" name="form-name" value="contact" /> 
       <input 
         type="name" 
+        name="name"
         placeholder="name"
       >
       <input 
         type="text" 
+        name="title"
         placeholder="title"
       >
       <input 
         type="email" 
+        name="email" 
         placeholder="email"
       >
       <textarea 
