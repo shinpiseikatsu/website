@@ -2,7 +2,7 @@
 
 ## 既存のアイテムを編集する
 
-1. Contentfulにログイン
+1. [Contentful](https://www.contentful.com/)にログイン
 
 2. 上部メニューから「Content」をクリックすると、アイテムの一覧が表示される
 
@@ -18,7 +18,7 @@
 
 ## 新しいアイテムを作成する
 
-1. Contentfulにログイン
+1. [Contentful](https://www.contentful.com/)にログイン
 
 2. 上部メニューから「Content」をクリックすると、アイテムの一覧が表示される
 
@@ -37,7 +37,7 @@
 
 ## 画像・動画を追加する
 
-1. Contentfulにログイン
+1. [Contentful](https://www.contentful.com/)にログイン
 
 2. 上部メニューから「Content」をクリックすると、アイテムの一覧が表示される
 
@@ -53,7 +53,7 @@
 
 ## Specialページを編集する
 
-1. Contentfulにログイン
+1. [Contentful](https://www.contentful.com/)にログイン
 
 2. 上部メニューから「Content」をクリックすると、アイテムの一覧が表示される
 
@@ -65,7 +65,7 @@
 
 ## Aboutページ・Contactページを編集する
 
-1. Contentfulにログイン
+1. [Contentful](https://www.contentful.com/)にログイン
 
 2. 上部メニューから「Content」をクリックすると、アイテムの一覧が表示される
 
