@@ -46,9 +46,9 @@
       <li :class="{'active': $route.path == '/contact'}" @click="nav = false">
         <nuxt-link to="/contact">CONTACT</nuxt-link>
       </li>
-      <li>
-        <nuxt-link to="/contact" @click="nav = false">INSTAGRAM</nuxt-link>
-      </li>
+      <a href="https://www.instagram.com/shinpi.seikatsu/" target="_blank">
+        <li>INSTAGRAM</li>
+      </a>
     </nav>
   </header>
 </template>
