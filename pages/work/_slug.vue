@@ -14,12 +14,11 @@
           v-for="(img,index) in work.fields.images" 
           :key="index"
         >
-          <img 
+          <div 
             v-if="img.fields.file.contentType.split('/')[0] == 'image'"
-            :src="img.fields.file.url" 
-            :alt="img.fields.file.name"
-            class="w-full display-block mx-auto"
-          >
+            :style=" 'background: url(' + img.fields.file.url + ')' " 
+            class="photo"
+          ></div>
           <video
             v-else
             :src="img.fields.file.url"
@@ -72,7 +71,7 @@ export default {
     font-family monospace, 'YuGothic', 'Yu Gothic'
 .VueCarousel-navigation-button
   position absolute
-  top 50%
+  top 45%
   -webkit-box-sizing border-box
   box-sizing border-box
   color #000
@@ -114,6 +113,14 @@ export default {
   border-radius 100%
   outline none
 button:focus
-    border none!important
-    outline none!important
+  border none!important
+  outline none!important
+.photo
+  width 100%
+  height 400px
+  background-repeat no-repeat!important
+  background-size contain!important
+  background-position center!important
+  @media (max-width 700px)
+    height 250px
 </style>

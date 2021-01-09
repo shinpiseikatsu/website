@@ -15,11 +15,10 @@
           v-for="(img,index) in product.fields.images" 
           :key="index"
         >
-          <img 
-            :src="img.fields.file.url" 
-            :alt="img.fields.file.name"
-            class="w-full display-block mx-auto"
-          >
+          <div 
+            :style=" 'background: url(' + img.fields.file.url + ')' " 
+            class="photo"
+          ></div>
         </slide>
       </carousel>
     </no-ssr>
