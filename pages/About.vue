@@ -36,4 +36,5 @@ export default {
   line-height 1rem
   p
     margin 1.5rem 0
+    font-size .9rem
 </style>

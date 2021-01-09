@@ -2,7 +2,7 @@
   <header>
     <nuxt-link to="/special">
       <div class="logo">
-        <img src="../assets/img/icon_1.jpg" alt="">
+        <img src="../assets/img/icon_1.png" alt="">
       </div>
     </nuxt-link>
     <nav class="nav_lg">
@@ -18,7 +18,7 @@
       <li :class="{'active': $route.path == '/contact'}">
         <nuxt-link to="/contact">CONTACT</nuxt-link>
       </li>
-      <a href="https://www.instagram.com/shinpi.seikatsu/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/shinpi.seikatsu/" target="_blank">
         <li>
           INSTAGRAM
         </li>
@@ -74,7 +74,7 @@ header
     left 0
     margin-bottom 2rem
 .logo
-  width 6rem
+  width 7rem
   @media(max-width 900px) 
     margin 0 auto
 .nav_lg

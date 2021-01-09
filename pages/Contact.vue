@@ -28,8 +28,7 @@
         name="message" 
         rows="10" 
         placeholder="message"
-        required 
-        minlength="30"
+        required
       ></textarea>
       <p class="my-5">{{ texts.fields.contactMessage }}</p>
       <button type="submit">Send</button>

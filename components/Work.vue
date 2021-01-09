@@ -14,6 +14,7 @@
       @mouseleave="videoController(false, work.sys.id)"
       class="item my-1"
       playsinline
+      :poster="poster"
     ></video>
   </nuxt-link>
 </template>
@@ -21,6 +22,16 @@
 <script>
 export default {
   props: ['work'],
+  data() {
+    return {
+      poster: '../assets/img/icon_1.png'
+    }
+  },
+  created () {
+    if (this.$props.work.fields.images[1]) {
+      this.poster = this.$props.work.fields.images[1].fields.file.url
+    }
+  },
   methods: {
     videoController(isHovering, index) {
       if (isHovering == true) {

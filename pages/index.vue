@@ -122,13 +122,10 @@ export default {
   @media(max-width 900px)
     justify-content center
 
-.three_cols, .two_cols
+.four_cols, .two_cols
   display none 
-@media(max-width 1200px)
-  .four_cols
-    display none
-  .three_cols
-    display block
+.three_cols
+  display block
 @media(max-width 1000px)
   .two_cols
     display block
@@ -136,11 +133,9 @@ export default {
     display none
 
 .col
-  width calc(20%+40px)
+  width calc(30%+20px)
   margin 0 0.15rem
   transition .2s
-  @media(max-width 1200px)
-    width calc(30%+20px)
   @media(max-width 1000px)
     width 48%
   @media(max-width 700px)
