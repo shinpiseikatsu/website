@@ -40,7 +40,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue-carousel', ssr: false },
+    { src: '~/plugins/vue-carousel', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -54,7 +54,8 @@ export default {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/device'
   ],
   markdownit: { 
     html: true,

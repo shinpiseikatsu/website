@@ -6,6 +6,16 @@
       class="item my-1"
     />
     <video
+      v-else-if="!$device.isMobile"
+      :src="work.fields.images[0].fields.file.url"
+      :alt="work.fields.title"
+      :ref="'video' + work.sys.id"
+      @mouseover="videoController(true, work.sys.id)"
+      @mouseleave="videoController(false, work.sys.id)"
+      class="item my-1"
+      playsinline
+    ></video>
+    <video
       v-else
       :src="work.fields.images[0].fields.file.url"
       :alt="work.fields.title"
